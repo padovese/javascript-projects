@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<link rel="stylesheet" href="">
+	</head>
+	<body>
+		
+<p id="wed"></p>
+
+	</body>
+	<script type="text/javascript">
+		var x = "I am Padovese";
+		y = x.indexOf("Padovese");
+		document.write(y);
+		//lastIndexOf - do the same, but get the last part
+
+		var a = "beer,tequila,cachaca";
+		var b = a.slice(4, 12);
+		document.write(b);
+		//similar to substr
+
+		var c = a.substr(4, 8);
+		document.write(c);
+
+		document.write(Date());
+
+		document.getElementById('wed').innerHTML = new Date('1991-04-26');
+	</script>
+</html>

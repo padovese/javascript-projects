@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<link rel="stylesheet" href="">
+	</head>
+	<body>
+		<p id="id1">
+		</p>
+		<input id="id" type="text" value="0">
+		<button onclick="validation()">Click me motherfucker</button>
+	</body>
+	
+	<script type="text/javascript">
+	var a = document.getElementById('id').value;
+
+	function validation(){
+	switch(a){
+	case "0":
+	document.write("zero");
+	break;
+	case "1":
+	document.write("one");
+	break;
+	default:
+	document.write("Not zero or one");
+	break;
+	}
+	}
+	</script>
+</html>

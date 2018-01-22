@@ -6,7 +6,7 @@
 	 			$("#pop").hide();
 	 		});
 	 		$("#btn-a").click(function(){
-	 			if(false){
+	 			if(true){
 	 				$("#pop").show();
 	 			}
 	 		});

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		var holder = "";
+		$("li:eq(0)").mouseover(function(e){
+			holder = $(this).text();
+			$(this).text("get off me!");
+		})
+		$("li:eq(0)").mouseout(function(e){
+			$(this).text(holder);
+			//$(this).text("thanks.");
+		})
+	})
+</script>
+</head>
+<body>
+
+	<ul>
+		<li>One</li>
+		<li>Two</li>
+		<li>Three</li>
+		<li>Four</li>
+	</ul>
+
+</body>
+</html>

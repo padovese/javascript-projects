@@ -1,0 +1,29 @@
+		body {
+	    display: block;
+	    margin: 0px;
+	    margin-top: 0px;
+	    margin-right: 0px;
+	    margin-bottom: 0px;
+	    margin-left: 0px;
+		}
+
+		#cabecalho{
+			background-color: #f74160;
+		}
+
+		#corpo{
+			background-color: beige;
+		}
+
+		#rodape{
+			background-color: red;
+		}
+
+		.fonte{
+			color: white;
+			font-size: 12px;
+		}
+
+		.fonteEstilo{
+			font-family: verdana;
+		}

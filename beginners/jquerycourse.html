@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Course</title>
+</head>
+<body>
+<div id="output">Output Content</div>
+
+<ul>
+	<li>One</li>
+	<li>Two</li>
+	<li>Three</li>
+	<li>Four</li>
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			$("li").each(function(i, e){
+				console.log(e);
+				console.log(i);
+				$(e).text((i+1) + " Count");
+		})
+		})
+
+		$("#output").prepend("Into the begining");
+		$("#output").append("To the end");
+		$("#output").before("<div class='exemple'>abc</div>")
+		$("#output").after("Some content after the div");
+		//$("#output").empty();
+		//$("#output").remove();
+	</script>
+</body>
+</html>

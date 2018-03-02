@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery course</title>
+	<style>
+		li:nth-child(3){
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="output">Output content</div>
+	<div class="one">CLick me to change the div above</div>
+
+	<ul>
+		<li>Item one</li>
+		<li>Item two</li>
+		<li>Item three</li>
+		<li>Item four</li>
+	</ul>
+
+	<input type="text" value="helloWorld" id="myInput">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("li:eq(0)").mouseover(function(e){
+				$(this).text("Get off me!");
+			})
+
+			$(".one").on("click", function(event){
+				console.log($(this));
+				$("#output").html("Clicked");
+			})
+		
+
+			$("li:eq(2)").click (function(event){
+				console.log($(this));
+				$("li").html("ouch");
+			
+			})
+		})
+	</script>
+</body>
+</html>

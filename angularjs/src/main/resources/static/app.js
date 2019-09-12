@@ -18,7 +18,7 @@ app.controller('aController', function ($scope){
 	$scope.lastName = 'Mouse';
 	$scope.person = {
 		name: 'Bruce',
-		lastName: 'Wayme'
+		last: 'Wayme'
 	}
 });
 
@@ -32,7 +32,7 @@ app.directive("someForm", function(){
 		scope: { 
 			firstName: '@', //accept text
 			lastName: '@',
-			person: "=" //accept object
+			personObject: '=' //accept object
 		}
 	}
 

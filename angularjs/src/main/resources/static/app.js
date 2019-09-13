@@ -13,7 +13,7 @@ app.config(function ($routeProvider) {
 		})
 });
 
-app.controller('aController', function ($scope){
+app.controller('aController', function ($scope) {
 	$scope.firstName = 'Mickey';
 	$scope.lastName = 'Mouse';
 	$scope.person = {
@@ -26,14 +26,25 @@ app.controller('bController', function ($scope) {
 
 });
 
-app.directive("someForm", function(){
-	return{
+app.directive("someForm", function () {
+	return {
 		templateUrl: 'someForm.html',
-		scope: { 
+		scope: {
 			firstName: '@', //accept text
 			lastName: '@',
 			personObject: '=' //accept object
 		}
+	}
+
+});
+
+app.directive("inLine", function () {
+	return {
+		templateUrl: 'inLine.html',
+		scope: {
+			title: '@'
+		},
+		transclude: true //allows to write inside de component
 	}
 
 });

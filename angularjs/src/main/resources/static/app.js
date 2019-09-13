@@ -20,6 +20,13 @@ app.controller('aController', function ($scope) {
 		name: 'Bruce',
 		last: 'Wayme'
 	}
+	$scope.titles = [{
+		title: 'title 1'
+	},{
+		title: 'title 2'
+	},{
+		title: 'title 3'
+	}]
 });
 
 app.controller('bController', function ($scope) {
@@ -44,7 +51,14 @@ app.directive("inLine", function () {
 		scope: {
 			title: '@'
 		},
-		transclude: true //allows to write inside de component
+		transclude: true, //allows to write inside de component
+		link: function (scope, elements, attrs) { //Intercept the component and you can make changes
+			console.log(scope.title)
+			if (scope.title == 'title 2') {
+				console.log(elements)
+				elements.addClass('red');
+			}
+		}
 	}
 
 });

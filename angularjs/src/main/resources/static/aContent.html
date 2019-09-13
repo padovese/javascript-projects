@@ -1,6 +1,12 @@
+<style>
+	.red {
+		color: red;
+	}
+</style>
+
 <div ng-controller="aController">
 	<some-form first-name="{{firstName}}" last-name="{{lastName}}" person-object="person"></some-form>
-	<in-line title="The title of the component">Little text over here.</in-line>
+	<in-line ng-repeat="title in titles" title="{{title.title}}">Little text over here.</in-line>
 
 	<a href="#!/b">Go to /b</a>
 </div>

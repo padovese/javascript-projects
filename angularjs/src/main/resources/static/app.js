@@ -1,16 +1,21 @@
-let app = angular.module('app', ['ngRoute']);
+let app = angular.module('app', ['ui.router']);
 
-app.config(function ($routeProvider) {
-	$routeProvider
-		.when("/", {
-			templateUrl: 'aContent.html',
-			controller: 'aController'
-		})
+app.config(function ($stateProvider) {
+		let a = {
+			name: 'a',
+			url: '',
+			templateUrl: 'aContent.html'
+		}
 
-		.when("/b", {
-			templateUrl: 'bContent.html',
-			controller: 'bController'
-		})
+		let b = {
+			name: 'b',
+			url: '/b',
+			templateUrl: 'bContent.html'
+		}
+
+$stateProvider.state(a);
+$stateProvider.state(b);
+
 });
 
 app.controller('aController', function ($scope) {

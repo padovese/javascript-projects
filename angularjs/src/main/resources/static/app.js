@@ -58,6 +58,12 @@ $stateProvider.state(b);
 	console.log(cityService.name);
 	console.log(cityService.namelenght());
 	cityService.api();
+	
+//	Services are singletons. If you want to update the value, use something like this:
+//	$scope.$watch('name', function(){
+//		cityService.name = $scope.name;
+//	});
+	
 })
 
 .directive("someForm", function () {

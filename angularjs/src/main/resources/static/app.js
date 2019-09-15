@@ -1,6 +1,6 @@
-let app = angular.module('app', ['ui.router']);
+let app = angular.module('app', ['ui.router'])
 
-app.config(function ($stateProvider) {
+.config(function ($stateProvider) {
 		let a = {
 			name: 'a',
 			url: '',
@@ -16,9 +16,29 @@ app.config(function ($stateProvider) {
 $stateProvider.state(a);
 $stateProvider.state(b);
 
-});
+})
 
-app.controller('aController', function ($scope) {
+.service('cityService', function($http) {
+   
+	let self = this;
+	
+	this.name = 'padovao';
+	this.namelenght = () => {
+		return self.name.length;
+	}
+	this.api = function(){
+
+		$http.get('/mock').then(
+				function (result) {
+					console.log(result.data);
+				}, function (data, status) {
+					console.log(data, status);
+				});
+	}
+    
+})
+
+.controller('aController', function ($scope, cityService) {
 	$scope.firstName = 'Mickey';
 	$scope.lastName = 'Mouse';
 	$scope.person = {
@@ -32,13 +52,15 @@ app.controller('aController', function ($scope) {
 	},{
 		title: 'title 3'
 	}]
-});
+})
 
-app.controller('bController', function ($scope) {
+.controller('bController', function ($scope, cityService) {
+	console.log(cityService.name);
+	console.log(cityService.namelenght());
+	cityService.api();
+})
 
-});
-
-app.directive("someForm", function () {
+.directive("someForm", function () {
 	return {
 		templateUrl: 'someForm.html',
 		scope: {
@@ -48,9 +70,9 @@ app.directive("someForm", function () {
 		}
 	}
 
-});
+})
 
-app.directive("inLine", function () {
+.directive("inLine", function () {
 	return {
 		templateUrl: 'inLine.html',
 		scope: {

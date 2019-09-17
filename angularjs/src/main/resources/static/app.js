@@ -12,9 +12,16 @@ let app = angular.module('app', ['ui.router'])
 			url: '/b',
 			templateUrl: 'bContent.html'
 		}
+		
+		let c = {
+				name: 'c',
+				url: '/c',
+				templateUrl: 'cContent.html'
+			}
 
 $stateProvider.state(a);
 $stateProvider.state(b);
+$stateProvider.state(c);
 
 })
 
@@ -64,6 +71,10 @@ $stateProvider.state(b);
 //		cityService.name = $scope.name;
 //	});
 	
+})
+
+.controller('cController', function () {	
+	this.value1 = 'the first value';
 })
 
 .directive("someForm", function () {
